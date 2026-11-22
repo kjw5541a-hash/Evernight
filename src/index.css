@@ -1,0 +1,190 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Cinzel', 'Noto Sans KR', Georgia, serif;
+    --font-sans: 'Noto Sans KR', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  }
+
+  html,
+  body,
+  #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: var(--font-sans);
+    background-color: #0e1218;
+    color: #ebe6dc;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: none;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.hud-text-stroke {
+  paint-order: stroke fill;
+  text-shadow: 0 2px 4px rgba(7, 9, 13, 0.92), 0 0 1px rgba(7, 9, 13, 0.95);
+}
+
+@keyframes modalEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-modal-enter {
+  animation: modalEnter 180ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes lootAuraPulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes lootSheenSweep {
+  0% {
+    transform: translateX(-140%) skewX(-20deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.5;
+  }
+  55% {
+    transform: translateX(220%) skewX(-20deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(220%) skewX(-20deg);
+    opacity: 0;
+  }
+}
+
+.animate-loot-aura {
+  animation: lootAuraPulse 2.4s ease-in-out infinite;
+}
+
+.animate-loot-sheen {
+  animation: lootSheenSweep 3.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes levelUpPop {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.76);
+  }
+  16% {
+    opacity: 1;
+    transform: translateY(0) scale(1.06);
+  }
+  28% {
+    transform: translateY(0) scale(1);
+  }
+  84% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-16px) scale(0.96);
+  }
+}
+
+@keyframes levelUpSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes skillBtnGlowPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 12px rgba(250, 204, 21, 0.55), 0 0 26px rgba(56, 189, 248, 0.42), 0 4px 16px rgba(0, 0, 0, 0.65);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 22px rgba(253, 224, 71, 0.95), 0 0 42px rgba(56, 189, 248, 0.72), 0 6px 20px rgba(0, 0, 0, 0.75);
+    transform: scale(1.04);
+  }
+}
+
+@keyframes skillBtnShimmer {
+  0% {
+    transform: translateX(-140%) skewX(-24deg);
+  }
+  55% {
+    transform: translateX(220%) skewX(-24deg);
+  }
+  100% {
+    transform: translateX(220%) skewX(-24deg);
+  }
+}
+
+@keyframes badgeBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.animate-levelup-pop {
+  animation: levelUpPop 2.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-levelup-spin {
+  animation: levelUpSpin 9s linear infinite;
+}
+
+.animate-skill-glow {
+  animation: skillBtnGlowPulse 1.55s ease-in-out infinite;
+}
+
+.animate-skill-shimmer {
+  animation: skillBtnShimmer 2.1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-badge-bounce {
+  animation: badgeBounce 1.15s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-modal-enter,
+  .animate-loot-aura,
+  .animate-loot-sheen,
+  .animate-levelup-pop,
+  .animate-levelup-spin,
+  .animate-skill-glow,
+  .animate-skill-shimmer,
+  .animate-badge-bounce {
+    animation: none;
+  }
+}
