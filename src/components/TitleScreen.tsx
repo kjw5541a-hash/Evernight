@@ -3,7 +3,7 @@ import { ALL_HERO_CLASSES, HERO_CLASS_CATALOG } from '../game/classSkills';
 import type { HeroClassId } from '../game/types';
 import { TitleCrestSvg } from './GameIcons';
 
-const TITLE_BG_URL = '/src/assets/images/title_bg_1795130863499.jpg';
+const TITLE_BG_URL = `${import.meta.env.BASE_URL}src/assets/images/title_bg_1795130863499.jpg`;
 
 interface TitleScreenProps {
   selectedClass: HeroClassId;

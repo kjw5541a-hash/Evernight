@@ -6,6 +6,8 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
+    // GitHub Pages project site: served under /Evernight/
+    base: '/Evernight/',
     plugins: [
       react(),
       tailwindcss(),

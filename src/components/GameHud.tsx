@@ -15,7 +15,7 @@ import {
   SkullIconSvg,
 } from './GameIcons';
 
-const HERO_PORTRAIT_URL = '/src/assets/images/hero_portrait_1795130865371.jpg';
+const HERO_PORTRAIT_URL = `${import.meta.env.BASE_URL}src/assets/images/hero_portrait_1795130865371.jpg`;
 
 interface GameHudProps {
   hud: HudSnapshot;

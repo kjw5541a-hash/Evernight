@@ -2,7 +2,7 @@ import { BIOME_CATALOG, ELEMENT_CATALOG, GEAR_RARITY_META } from './catalog';
 import { getSpriteAtlas, type SpriteFrameSet } from './sprites';
 import type { BiomeId, Enemy, InputState, WorldState } from './types';
 
-export const ARENA_FLOOR_TILE_URL = '/src/assets/images/arena_floor_tile_1795130865064.jpg';
+export const ARENA_FLOOR_TILE_URL = `${import.meta.env.BASE_URL}src/assets/images/arena_floor_tile_1795130865064.jpg`;
 
 export class ArenaRenderer {
   private floorImg: HTMLImageElement | null = null;
